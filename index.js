@@ -85,7 +85,7 @@ function draw() {
     var r = map(points[i].x, 0, width, color.r1, color.r2);
     var g = map(points[i].y, 0, height, color.g1, color.g2);
     var b = map(points[i].x, 0, width, color.b1, color.b2);
-    var alpha = map(dist(xo, yo, points[i].x, points[i].y), 0, width, 255, 0);
+    //var alpha = map(dist(xo, yo, points[i].x, points[i].y), 0, width, 255, 0);
     fill(r, g, b);
 
     var pp = createVector(points[i].y*m0 - yo*m0 - (points[i].x*m1 - xo*m1),-(points[i].x*m2 - xo*m2) - (points[i].y*m3 - yo*m3));
@@ -94,4 +94,6 @@ function draw() {
     points[i].add(fpp);
     ellipse(points[i].x, points[i].y, stroke_size);
   }
+  triggerPreview();
+
 }
