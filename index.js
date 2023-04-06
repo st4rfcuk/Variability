@@ -28,12 +28,12 @@ function setup() {
   xo = width / 2;
   yo = height / 2;
   map_max=max(width,height);
-  var1=random(-100,100);
-  var2=random(-100,100);
-  var3=random(-100,100);
-  var4=random(-100,100);
+  //var1=random(-100,100);
+  //var2=random(-100,100);
+  //var3=random(-100,100);
+  //var4=random(-100,100);
   
-  console.log(var1,var2,var3,var4)
+  //console.log(var1,var2,var3,var4)
   
   var original_density = 10;
   var space = width / original_density;
@@ -53,7 +53,7 @@ function setup() {
     return dist(b.x, b.y, xo, yo) - dist(a.x, a.y, xo, yo);
   });
 
-  var numColors = 3;
+  var numColors = m4;
 
   for (var i = 0; i < numColors; i++) {
     var color = {
@@ -88,7 +88,7 @@ function draw() {
     var alpha = map(dist(xo, yo, points[i].x, points[i].y), 0, width, 255, 0);
     fill(r, g, b);
 
-    var pp = createVector(points[i].y*var1 - yo*var1 - (points[i].x*var2 - xo*var2),-(points[i].x*var3 - xo*var3) - (points[i].y*var4 - yo*var4));
+    var pp = createVector(points[i].y*m0 - yo*m0 - (points[i].x*m1 - xo*m1),-(points[i].x*m2 - xo*m2) - (points[i].y*m3 - yo*m3));
     var pp_angle = pp.heading();
     var fpp = createVector(cos(pp_angle), sin(pp_angle));
     points[i].add(fpp);
