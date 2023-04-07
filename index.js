@@ -68,7 +68,7 @@ function setup() {
   }
 }
 
-function draw() {
+function drawArt() {
   noStroke();
 
   if (2*frameCount <= points.length) {
