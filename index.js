@@ -1,40 +1,29 @@
- var points = [];
-var colors = [];
-var r1;
-var r2;
-var g1;
-var g2;
-var b1;
-var b2;
-var xo, yo;
-var var1;
-var var2;
-var var3;
-var var4;
-var dens_min=2;
-var dens_max=15;
-var map_max;
-var stroke_size=1;
-var background_color_r=0;
-var background_color_g=0;
-var background_color_b=0;
+function drawArt() {
+  var points = [];
+  var colors = [];
+  var r1;
+  var r2;
+  var g1;
+  var g2;
+  var b1;
+  var b2;
+  var xo, yo;
+  var dens_min=2;
+  var dens_max=15;
+  var map_max;
+  var stroke_size=1;
+  var background_color_r=0;
+  var background_color_g=0;
+  var background_color_b=0;
 
+  background(background_color_r, background_color_g, background_color_b);
 
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-  background(background_color_r,background_color_g,background_color_b);
   noiseDetail(1);
   angleMode(DEGREES);
   xo = width / 2;
   yo = height / 2;
-  map_max=max(width,height);
-  //var1=random(-100,100);
-  //var2=random(-100,100);
-  //var3=random(-100,100);
-  //var4=random(-100,100);
-  
-  //console.log(var1,var2,var3,var4)
-  
+  map_max = max(width, height);
+
   var original_density = 10;
   var space = width / original_density;
 
@@ -50,7 +39,7 @@ function setup() {
   }
 
   points.sort(function(a, b) {
-    return dist(b.x, b.y, xo, yo) - dist(a.x, a.y, xo, yo);
+    return dist(b.get_x(), b.get_y(), xo, yo) - dist(a.get_x(), a.get_y(), xo, yo);
   });
 
   var numColors = m4;
@@ -66,9 +55,7 @@ function setup() {
     };
     colors.push(color);
   }
-}
 
-function draw() {
   noStroke();
 
   if (2*frameCount <= points.length) {
@@ -82,16 +69,17 @@ function draw() {
     var groupIndex = floor(i / groupSize);
     var color = colors[groupIndex];
 
-    var r = map(points[i].x, 0, width, color.r1, color.r2);
-    var g = map(points[i].y, 0, height, color.g1, color.g2);
-    var b = map(points[i].x, 0, width, color.b1, color.b2);
-    //var alpha = map(dist(xo, yo, points[i].x, points[i].y), 0, width, 255, 0);
+    var r = map(points[i].get_x(), 0, width, color.r1, color.r2);
+    var g = map(points[i].get_y(), 0, height, color.g1, color.g2);
+    var b = map(points[i].get_x(), 0, width, color.b1, color.b2);
     fill(r, g, b);
 
-    var pp = createVector(points[i].y*m0 - yo*m0 - (points[i].x*m1 - xo*m1),-(points[i].x*m2 - xo*m2) - (points[i].y*m3 - yo*m3));
+    var pp = createVector(points[i].get_y()*m0 - yo*m0 - (points[i].get_x()*m1 - xo*m1),-(points[i].get_x()*m2 - xo*m2) - (points[i].get_y()*m3 - yo*m3));
     var pp_angle = pp.heading();
     var fpp = createVector(cos(pp_angle), sin(pp_angle));
     points[i].add(fpp);
-    ellipse(points[i].x, points[i].y, stroke_size);
+    ellipse(points[i].get_x(), points[i].get_y(), stroke_size);
   }
+  
+  addPixels();
 }
