@@ -17,7 +17,7 @@ function drawArt(){
   var dens_min=1;
   var dens_max=10;
   var map_max;
-  var stroke_size=5;
+  var stroke_size=m0*5;
   var background_color_r=0;
   var background_color_g=0;
   var background_color_b=0;
@@ -47,7 +47,7 @@ function drawArt(){
     return dist(b.x, b.y, xo, yo) - dist(a.x, a.y, xo, yo);
   });
 
-  var numColors = m0;
+  var numColors = 3;
 
   for (var i = 0; i < numColors; i++) {
     var color = {
@@ -61,7 +61,7 @@ function drawArt(){
     colors.push(color);
   }
 
-  for (var ix = 0; ix < 50; ix++) {
+  for (var ix = 0; ix < 150; ix++) {
 
 
 
