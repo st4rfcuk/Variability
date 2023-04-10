@@ -1,41 +1,33 @@
-var points = [];
-var colors = [];
-var r1;
-var r2;
-var g1;
-var g2;
-var b1;
-var b2;
-var xo, yo;
-var var1;
-var var2;
-var var3;
-var var4;
-var dens_min=2;
-var dens_max=15;
-var map_max;
-var stroke_size=1;
-var background_color_r=0;
-var background_color_g=0;
-var background_color_b=0;
-let pg;
-let cs=500;
-let m0=10;
-let m1=10;
-let m2=10;
-let m3=10;
-let m4=10;
-
-
-function setup() {
-  createCanvas(cs, cs);
-  pg = createGraphics(cs, cs)
+function drawArt(){
+  noLoop();  
+    
+  var points = [];
+  var colors = [];
+  var r1;
+  var r2;
+  var g1;
+  var g2;
+  var b1;
+  var b2;
+  var xo, yo;
+  var var1;
+  var var2;
+  var var3;
+  var var4;
+  var dens_min=2;
+  var dens_max=15;
+  var map_max;
+  var stroke_size=1;
+  var background_color_r=0;
+  var background_color_g=0;
+  var background_color_b=0;
+  
   pg.background(background_color_r,background_color_g,background_color_b);
   noiseDetail(1);
   angleMode(DEGREES);
   xo = cs / 2;
   yo = cs / 2;
-  map_max=max(cs,cs);
+  map_max=cs;
   var1=m1;
   var2=m2;
   var3=m3;
@@ -72,18 +64,14 @@ function setup() {
     };
     colors.push(color);
   }
-}
 
-function draw() {
+  for (var ix = 0; ix < 200; ix++) {
+
+
+
   pg.noStroke();
 
-  if (2*frameCount <= points.length) {
-    var max = 2*frameCount;
-  } else {
-    var max = points.length;
-  }
-
-  for (var i = 0; i < max; i++) {
+  for (var i = 0; i < points.length; i++) {
     var groupSize = ceil(points.length / colors.length);
     var groupIndex = floor(i / groupSize);
     var color = colors[groupIndex];
@@ -99,8 +87,9 @@ function draw() {
     points[i].add(fpp);
     pg.ellipse(points[i].x, points[i].y, stroke_size);
   }
-    image(pg, 0, 0);
-    triggerPreview();
+}
+    //image(pg, 0, 0);
+    //triggerPreview();
 
 
 }
