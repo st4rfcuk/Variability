@@ -17,7 +17,7 @@ function drawArt(){
   var dens_min=1;
   var dens_max=10;
   var map_max;
-  var stroke_size=m0*5;
+  var stroke_size=m0*10;
   var background_color_r=0;
   var background_color_g=0;
   var background_color_b=0;
