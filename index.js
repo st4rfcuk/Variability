@@ -14,10 +14,10 @@ function drawArt(){
   var var2;
   var var3;
   var var4;
-  var dens_min=2;
-  var dens_max=15;
+  var dens_min=1;
+  var dens_max=10;
   var map_max;
-  var stroke_size=1;
+  var stroke_size=5;
   var background_color_r=0;
   var background_color_g=0;
   var background_color_b=0;
@@ -28,12 +28,8 @@ function drawArt(){
   xo = cs / 2;
   yo = cs / 2;
   map_max=cs;
-  var1=m1;
-  var2=m2;
-  var3=m3;
-  var4=m4;
     
-  var original_density = 10;
+  var original_density = 5;
   var space = width / original_density;
 
   for (var x = 0 - 2 * space; x < cs + 2 * space; x += space) {
@@ -51,7 +47,7 @@ function drawArt(){
     return dist(b.x, b.y, xo, yo) - dist(a.x, a.y, xo, yo);
   });
 
-  var numColors = 3;
+  var numColors = m0;
 
   for (var i = 0; i < numColors; i++) {
     var color = {
@@ -65,7 +61,7 @@ function drawArt(){
     colors.push(color);
   }
 
-  for (var ix = 0; ix < 200; ix++) {
+  for (var ix = 0; ix < 50; ix++) {
 
 
 
@@ -81,7 +77,7 @@ function drawArt(){
     var b = map(points[i].x, 0, cs, color.b1, color.b2);
     pg.fill(r, g, b);
 
-    var pp = createVector(points[i].y*var1 - yo*var1 - (points[i].x*var2 - xo*var2),-(points[i].x*var3 - xo*var3) - (points[i].y*var4 - yo*var4));
+    var pp = createVector(points[i].y*m1 - yo*m1 - (points[i].x*m2 - xo*m2),-(points[i].x*m3 - xo*m3) - (points[i].y*m4 - yo*m4));
     var pp_angle = pp.heading();
     var fpp = createVector(cos(pp_angle), sin(pp_angle));
     points[i].add(fpp);
