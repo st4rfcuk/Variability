@@ -25,7 +25,7 @@ function drawArt(){
   yo = cs / 2;
   map_max=cs;
     
-  var original_density = 6.5;
+  var original_density = 5;
   var space = width / original_density;
 
   for (var x = 0 - 2 * space; x < cs + 2 * space; x += space) {
@@ -33,7 +33,7 @@ function drawArt(){
       var d = dist(x, y, xo, yo);
       var dens = map(d, 0, map_max, dens_max, dens_min);
       for (var i = 0; i < dens; i++) {
-        var p = createVector(x + (randomM0() *(-space / 2), randomM0() *(space / 2)), y + (randomM0() *(-space / 2), randomM0() *(space / 2)));
+        var p = createVector(x + randomM0() *(space / 2), y + randomM0() *(space / 2));
         points.push(p);
       }
     }
@@ -57,7 +57,7 @@ function drawArt(){
     colors.push(color);
   }
 
-  for (var ix = 0; ix < 750; ix++) {
+  for (var ix = 0; ix < 500; ix++) {
 
 
 
