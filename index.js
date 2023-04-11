@@ -10,14 +10,10 @@ function drawArt(){
   var b1;
   var b2;
   var xo, yo;
-  var var1;
-  var var2;
-  var var3;
-  var var4;
-  var dens_min=1;
-  var dens_max=10;
+  var dens_min=2;
+  var dens_max=8;
   var map_max;
-  var stroke_size=m0*10;
+  var stroke_size=2;
   var background_color_r=0;
   var background_color_g=0;
   var background_color_b=0;
@@ -29,7 +25,7 @@ function drawArt(){
   yo = cs / 2;
   map_max=cs;
     
-  var original_density = 5;
+  var original_density = 6.5;
   var space = width / original_density;
 
   for (var x = 0 - 2 * space; x < cs + 2 * space; x += space) {
@@ -37,7 +33,7 @@ function drawArt(){
       var d = dist(x, y, xo, yo);
       var dens = map(d, 0, map_max, dens_max, dens_min);
       for (var i = 0; i < dens; i++) {
-        var p = createVector(x + random(-space / 2, space / 2), y + random(-space / 2, space / 2));
+        var p = createVector(x + (randomM0() *(-space / 2), randomM0() *(space / 2)), y + (randomM0() *(-space / 2), randomM0() *(space / 2)));
         points.push(p);
       }
     }
@@ -47,21 +43,21 @@ function drawArt(){
     return dist(b.x, b.y, xo, yo) - dist(a.x, a.y, xo, yo);
   });
 
-  var numColors = 3;
+  var numColors = 5;
 
   for (var i = 0; i < numColors; i++) {
     var color = {
-      r1: random(0, 255),
-      r2: random(0, 255),
-      g1: random(0, 255),
-      g2: random(0, 255),
-      b1: random(0, 255),
-      b2: random(0, 255)
+      r1: randomM0() * 255,
+      r2: randomM0() * 255,
+      g1: randomM0() * 255,
+      g2: randomM0() * 255,
+      b1: randomM0() * 255,
+      b2: randomM0() * 255
     };
     colors.push(color);
   }
 
-  for (var ix = 0; ix < 150; ix++) {
+  for (var ix = 0; ix < 750; ix++) {
 
 
 
