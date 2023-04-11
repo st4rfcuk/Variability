@@ -11,7 +11,7 @@ function drawArt(){
   var b2;
   var xo, yo;
   var dens_min=1;
-  var dens_max=6;
+  var dens_max=5;
   var map_max;
   var stroke_size=5;
   var background_color_r=0;
@@ -25,7 +25,7 @@ function drawArt(){
   yo = cs / 2;
   map_max=cs;
     
-  var original_density = 4;
+  var original_density = 3;
   var space = width / original_density;
 
   for (var x = 0 - 2 * space; x < cs + 2 * space; x += space) {
