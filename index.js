@@ -10,10 +10,10 @@ function drawArt(){
   var b1;
   var b2;
   var xo, yo;
-  var dens_min=2;
-  var dens_max=8;
+  var dens_min=1;
+  var dens_max=6;
   var map_max;
-  var stroke_size=2;
+  var stroke_size=5;
   var background_color_r=0;
   var background_color_g=0;
   var background_color_b=0;
@@ -25,7 +25,7 @@ function drawArt(){
   yo = cs / 2;
   map_max=cs;
     
-  var original_density = 5;
+  var original_density = 4;
   var space = width / original_density;
 
   for (var x = 0 - 2 * space; x < cs + 2 * space; x += space) {
@@ -43,7 +43,7 @@ function drawArt(){
     return dist(b.x, b.y, xo, yo) - dist(a.x, a.y, xo, yo);
   });
 
-  var numColors = 5;
+  var numColors = 3;
 
   for (var i = 0; i < numColors; i++) {
     var color = {
