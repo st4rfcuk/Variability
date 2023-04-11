@@ -81,7 +81,7 @@ function drawArt(){
   }
 }
     //image(pg, 0, 0);
-    //triggerPreview();
+    triggerPreview();
 
 
 }
