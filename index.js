@@ -1,4 +1,5 @@
 function drawArt(){
+  
   noLoop();  
     
   var points = [];
@@ -10,10 +11,10 @@ function drawArt(){
   var b1;
   var b2;
   var xo, yo;
-  var dens_min=1;
-  var dens_max=5;
+  var dens_min=cs/2000;
+  var dens_max=cs/400;
   var map_max;
-  var stroke_size=5;
+  var stroke_size=cs/400;
   var background_color_r=0;
   var background_color_g=0;
   var background_color_b=0;
@@ -25,7 +26,7 @@ function drawArt(){
   yo = cs / 2;
   map_max=cs;
     
-  var original_density = 3;
+  var original_density = cs/500;
   var space = width / original_density;
 
   for (var x = 0 - 2 * space; x < cs + 2 * space; x += space) {
@@ -80,8 +81,5 @@ function drawArt(){
     pg.ellipse(points[i].x, points[i].y, stroke_size);
   }
 }
-    //image(pg, 0, 0);
     triggerPreview();
-
-
 }
