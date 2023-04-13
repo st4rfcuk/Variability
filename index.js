@@ -4,12 +4,6 @@ function drawArt(){
     
   var points = [];
   var colors = [];
-  var r1;
-  var r2;
-  var g1;
-  var g2;
-  var b1;
-  var b2;
   var xo, yo;
   var dens_min=cs/2000;
   var dens_max=cs/400;
