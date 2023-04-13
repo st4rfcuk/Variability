@@ -52,7 +52,7 @@ function drawArt(){
     colors.push(color);
   }
 
-  for (var ix = 0; ix < 500; ix++) {
+  for (var ix = 0; ix < cs/4; ix++) {
 
 
 
