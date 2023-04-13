@@ -76,12 +76,12 @@ function drawArt(){
   }
 }
     triggerPreview();
-  
+}
+
   function keyPressed() {
 
   // If you hit the s key, save an image
   if (key == 's') {
-    save("mySketch.png");
+    save("Curves.png");
     }
   }
-}
