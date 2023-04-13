@@ -34,7 +34,7 @@ function drawArt(){
       var d = dist(x, y, xo, yo);
       var dens = map(d, 0, map_max, dens_max, dens_min);
       for (var i = 0; i < dens; i++) {
-        var p = createVector(x + randomM0() *(space / 2), y + randomM0() *(space / 2));
+        var p = createVector(x + randomM0(-space / 2,space / 2), y + randomM0(-space / 2,space / 2));
         points.push(p);
       }
     }
@@ -44,16 +44,16 @@ function drawArt(){
     return dist(b.x, b.y, xo, yo) - dist(a.x, a.y, xo, yo);
   });
 
-  var numColors = 3;
+  var numColors = abs(m0*5);
 
   for (var i = 0; i < numColors; i++) {
     var color = {
-      r1: randomM0() * 255,
-      r2: randomM0() * 255,
-      g1: randomM0() * 255,
-      g2: randomM0() * 255,
-      b1: randomM0() * 255,
-      b2: randomM0() * 255
+      r1: randomM1() * 255,
+      r2: randomM1() * 255,
+      g1: randomM2() * 255,
+      g2: randomM3() * 255,
+      b1: randomM4() * 255,
+      b2: randomM4() * 255
     };
     colors.push(color);
   }
@@ -74,7 +74,7 @@ function drawArt(){
     var b = map(points[i].x, 0, cs, color.b1, color.b2);
     pg.fill(r, g, b);
 
-    var pp = createVector(points[i].y*m1 - yo*m1 - (points[i].x*m2 - xo*m2),-(points[i].x*m3 - xo*m3) - (points[i].y*m4 - yo*m4));
+    var pp = createVector(points[i].y*(-100+m1(2*100)) - yo*(-100+m1(2*100)) - (points[i].x*(-100+m2(2*100)) - xo*(-100+m2(2*100))),-(points[i].x*(-100+m3(2*100)) - xo*(-100+m3(2*100))) - (points[i].y*(-100+m4(2*100)) - yo*(-100+m4(2*100))));
     var pp_angle = pp.heading();
     var fpp = createVector(cos(pp_angle), sin(pp_angle));
     points[i].add(fpp);
