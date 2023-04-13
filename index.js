@@ -74,7 +74,7 @@ function drawArt(){
     var b = map(points[i].x, 0, cs, color.b1, color.b2);
     pg.fill(r, g, b);
 
-    var pp = createVector(points[i].y*(-100+m1(2*100)) - yo*(-100+m1(2*100)) - (points[i].x*(-100+m2(2*100)) - xo*(-100+m2(2*100))),-(points[i].x*(-100+m3(2*100)) - xo*(-100+m3(2*100))) - (points[i].y*(-100+m4(2*100)) - yo*(-100+m4(2*100))));
+    var pp = createVector(points[i].y*(-100+m1*(2*100)) - yo*(-100+m1*(2*100)) - (points[i].x*(-100+m2*(2*100)) - xo*(-100+m2*(2*100))),-(points[i].x*(-100+m3*(2*100)) - xo*(-100+m3*(2*100))) - (points[i].y*(-100+m4*(2*100)) - yo*(-100+m4*(2*100))));
     var pp_angle = pp.heading();
     var fpp = createVector(cos(pp_angle), sin(pp_angle));
     points[i].add(fpp);
