@@ -20,8 +20,8 @@ function drawArt(){
   yo = cs / 2;
   map_max=cs;
     
-  var original_density = cs/500;
-  var space = (cs/2) / original_density;
+  var original_density = cs/200;
+  var space = cs / original_density;
 
   for (var x = 0 - 2 * space; x < cs + 2 * space; x += space) {
     for (var y = 0 - 2 * space; y < cs + 2 * space; y += space) {
