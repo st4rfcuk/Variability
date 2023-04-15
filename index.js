@@ -75,6 +75,6 @@ function drawArt(){
     pg.ellipse(points[i].x, points[i].y, stroke_size);
   }
 }
-    image(pg, 0, 0);
+    //image(pg, 0, 0);
     triggerPreview();
 }
